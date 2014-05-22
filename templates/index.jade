@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  .container
+    h1.text-center Welcome to Samu!
+    .row
+      .col-md-4
+      .col-md-4.jumbotron
+         form(ng-submit="login()")
+           input#user.form-control(ng-model="username",placeholder="Username")
+           input#pass.form-control(ng-model="password",type="password",placeholder="Password")
+           input.btn.btn-default.form-control(type="submit",value="Login")
+           div.text-danger.form-control(ng-show="error" ng-bind="error_msg")
